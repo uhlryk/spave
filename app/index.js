@@ -1,20 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
-import { createMemoryHistory } from "history";
-import App from "./App";
-const history = createMemoryHistory();
 
-const initialState = window.__INITIAL_STATE__;
-const config = window.__CONFIG__;
+import App from "./App";
+import style from "./sass/style.scss";  // eslint-disable-line
+
 
 render(
   <AppContainer>
-    <App
-      config={config}
-      history={history}
-      initialState={initialState}
-    />
+    <App />
   </AppContainer>,
   document.getElementById("root")
 );
@@ -24,11 +18,7 @@ if (module.hot) {
     const App = require("./App"); // eslint-disable-line
     render(
       <AppContainer>
-        <App
-          config={config}
-          history={history}
-          initialState={initialState}
-        />
+        <App />
       </AppContainer>,
       document.getElementById("root")
     );
