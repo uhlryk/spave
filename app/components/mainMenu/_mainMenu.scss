@@ -1,0 +1,58 @@
+.main-menu {
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    z-index: 9;
+    background-image: url("../components/mainMenu/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__grid {
+    position: absolute;
+    z-index: 10;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 50px 200px 50px 1fr;
+    grid-template-rows: 0.5fr 50px 40px 250px 1fr;
+    grid-template-areas: ". . . . ." ". title title title ." ". . . . ." ". . menu . ." ". . . . .";
+  }
+
+  &__title {
+    grid-row: title;
+    grid-column: title;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+  }
+  &__menu {
+    grid-row: menu;
+    grid-column: menu;
+  }
+  &__element {
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5em;
+    line-height: 2.5em;
+
+    &--inactive {
+      color: grey;
+
+      &:hover {
+        color: grey;
+      }
+    }
+
+    &:hover {
+      color: blue;
+    }
+  }
+}
+

@@ -1,12 +1,12 @@
 import React from "react";
 import { Route } from "react-router";
 
-import MainMenu from "./components/MainMenu";
+import MainMenu from "./components/mainMenu/MainMenu";
 
 class AppRouter extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div id="router">
         <Route exact path="/" component={MainMenu} />
       </div>
     );
