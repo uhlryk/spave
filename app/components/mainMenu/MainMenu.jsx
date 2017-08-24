@@ -1,6 +1,7 @@
 import React from "react";
-
+import { push } from "react-router-redux";
 import style from "./mainMenu.scss";
+import { connect } from "react-redux";
 
 class MainMenu extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class MainMenu extends React.Component {
           <div className="main-menu__title">deeper than life</div>
           <div className="main-menu__menu">
             <div className="main-menu__element main-menu__element--inactive">continue</div>
-            <div className="main-menu__element">new game</div>
+            <div className="main-menu__element" onClick={this.props.dispatch(push("/select-ship"))}>new game</div>
             <div className="main-menu__element">options</div>
             <div className="main-menu__element">exit</div>
           </div>
@@ -20,4 +21,4 @@ class MainMenu extends React.Component {
     );
   }
 }
-export default MainMenu;
+export default connect(state => ({ }))(MainMenu);
