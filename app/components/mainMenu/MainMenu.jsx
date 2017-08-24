@@ -1,4 +1,7 @@
 import React from "react";
+
+import style from "./mainMenu.scss";
+
 class MainMenu extends React.Component {
   render() {
     return (
