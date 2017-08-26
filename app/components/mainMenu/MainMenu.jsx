@@ -12,7 +12,7 @@ class MainMenu extends React.Component {
           <div className="main-menu__title">deeper than life</div>
           <div className="main-menu__menu">
             <div className="main-menu__element main-menu__element--inactive">continue</div>
-            <div className="main-menu__element" onClick={this.props.dispatch(push("/select-ship"))}>new game</div>
+            <div className="main-menu__element" onClick={() => this.props.dispatch(push("/choose-profession"))}>new game</div>
             <div className="main-menu__element">options</div>
             <div className="main-menu__element">exit</div>
           </div>
