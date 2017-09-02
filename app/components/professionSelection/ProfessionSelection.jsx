@@ -13,7 +13,7 @@ class ProfessionSelection extends React.Component {
     return (
       <div className="professions">
         <div className="professions__menu">
-          <a onClick={() => this.props.dispatch(push("/"))}><i className="fa fa-chevron-left" aria-hidden="true" /> Back to menu</a>
+          <a onClick={() => this.props.dispatch(push("/"))}><i className="fa fa-chevron-left" aria-hidden="true" /> Back</a>
         </div>
         <div className="professions__page-title">Select your past</div>
         <div className="professions__description">It determines your start ship and your relation with different fractions</div>
