@@ -1,0 +1,1 @@
+{"version":3,"file":"nationality.mapper.js","sourceRoot":"","sources":["../../../src/meta-characters/nationalities/nationality.mapper.ts"],"names":[],"mappings":";;;AAGA,MAAa,iBAAiB;IACrB,MAAM,CAAC,UAAU,CAAC,WAAwB;QAC/C,OAAO;YACL,EAAE,EAAE,WAAW,CAAC,EAAE;YAClB,IAAI,EAAE,WAAW,CAAC,IAAI;SACvB,CAAC;IACJ,CAAC;CACF;AAPD,8CAOC"}

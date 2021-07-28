@@ -1,0 +1,127 @@
+###
+@hostname = localhost:3000
+###
+//AUTH MODULE
+###
+//sign up
+POST /auth/signup  HTTP/1.1
+Host: {{hostname}}
+content-type: application/json
+
+{
+    "name": "test2",
+    "password": "test"
+}
+
+###
+//sign in
+# @name signin
+POST /auth/signin  HTTP/1.1
+Host: {{hostname}}
+content-type: application/json
+
+{
+    "username": "test",
+    "password": "test"
+}
+###
+@authToken = {{signin.response.body.access_token}}
+###
+//get signed user
+GET /auth/me HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//USER MODULE
+###
+@userId=02602098-51e6-475b-99d9-2bf8ba7abb2d
+###
+//list users
+GET /users HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//get user
+GET /users/{{userId}} HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//remove user
+DELETE /users/{{userId}} HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//create user
+POST /users HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+	"name": "test",
+	"password": "123"
+	
+}
+###
+//ADMIN/NATIONALITY MODULE
+###
+@nationalityId=5dd75fef-e2f5-4e2f-99f8-7565e7b9b294
+###
+//list nationalities
+GET /nationalities HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//get nationality
+GET /nationalities/{{nationalityId}} HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//remove nationality
+DELETE /nationalities/{{nationalityId}} HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//create nationality
+POST /nationalities HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+	"name": "Arabic"
+}
+###
+//ADMIN/NAME MODULE
+###
+@nameId=712f3442-64b0-48b3-8d7c-c2b3c1490878
+###
+//list names
+GET /admin/names HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//get name
+GET /admin/names/{{nameId}} HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//remove name
+DELETE /admin/names/{{nameId}} HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+###
+//create name
+POST /admin/names HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+	"name": "Adam",
+    "gender": "MALE",
+    "type": "FIRST_NAME",
+    "nationalityId": "{{nationalityId}}"
+
+}
+###
